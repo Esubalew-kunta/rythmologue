@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --ink: #0e1b2a;
+    --paper: #f7f5f0;
+    --signal: #0fb5a6;
+    --gold: #c8a24b;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+    font-feature-settings: 'ss01', 'cv01';
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--signal);
+    color: #fff;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display text-ink;
+    font-optical-sizing: auto;
+    text-wrap: balance;
+  }
+
+  /* Accessible focus ring in the brand signal colour */
+  :focus-visible {
+    outline: 2px solid var(--signal);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply font-mono text-2xs uppercase tracking-eyebrow text-gold;
+  }
+
+  .container-edge {
+    @apply mx-auto w-full max-w-[1240px] px-5 sm:px-8 lg:px-12;
+  }
+
+  /* Hairline grid texture for atmospheric backgrounds */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgba(14, 27, 42, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(14, 27, 42, 0.04) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  .link-underline {
+    background-image: linear-gradient(var(--signal), var(--signal));
+    background-size: 0% 1.5px;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    transition: background-size 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .link-underline:hover {
+    background-size: 100% 1.5px;
+  }
+}

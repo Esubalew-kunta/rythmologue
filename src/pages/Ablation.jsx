@@ -3,6 +3,7 @@ import PageHero from '../components/ui/PageHero'
 import { Container, Section, Eyebrow, Reveal } from '../components/ui/primitives'
 import InlineCTA from '../components/ui/InlineCTA'
 import PhotoFrame from '../components/ui/PhotoFrame'
+import PulseMarker from '../components/brand/PulseMarker'
 import { energies } from '../data/content'
 
 const procSchema = {
@@ -61,11 +62,28 @@ export default function Ablation() {
         </Container>
       </Section>
 
-      <Section className="pb-4">
+      <Section className="py-12">
         <Container>
-          <Reveal>
-            <PhotoFrame ratio="16/9" src="/ablation-eplab.png" alt="Salle d’électrophysiologie avec cartographie 3D du cœur" label="Cartographie 3D en salle d’électrophysiologie · illustration de procédure" />
-          </Reveal>
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
+            <Reveal>
+              <PhotoFrame ratio="4/3" src="/ablation-eplab.png" alt="Salle d’électrophysiologie avec cartographie 3D du cœur" label="Salle d’électrophysiologie · cartographie 3D" />
+            </Reveal>
+            <Reveal delay={0.1}>
+              <div>
+                <Eyebrow>En salle d’électrophysiologie</Eyebrow>
+                <h2 className="mt-4 text-3xl font-semibold">Une plateforme technologique de pointe</h2>
+                <p className="mt-4 text-slate">
+                  Chaque geste est guidé par une cartographie tridimensionnelle du cœur, dans un
+                  centre d’expertise accrédité — l’Hôpital Américain de Paris.
+                </p>
+                <ul className="mt-6 space-y-2.5">
+                  <li className="flex items-start gap-3 text-slate"><PulseMarker /> Cartographie 3D en temps réel</li>
+                  <li className="flex items-start gap-3 text-slate"><PulseMarker /> Centre d’expertise accrédité</li>
+                  <li className="flex items-start gap-3 text-slate"><PulseMarker /> Geste mini-invasif, guidé au millimètre</li>
+                </ul>
+              </div>
+            </Reveal>
+          </div>
         </Container>
       </Section>
 

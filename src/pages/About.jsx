@@ -1,9 +1,8 @@
 import Seo, { physicianSchema } from '../components/ui/Seo'
 import PageHero from '../components/ui/PageHero'
 import { Container, Section, Eyebrow, Reveal } from '../components/ui/primitives'
-import PhotoFrame from '../components/ui/PhotoFrame'
 import InlineCTA from '../components/ui/InlineCTA'
-import PulseMarker from '../components/brand/PulseMarker'
+import CategoryDropdown from '../components/ui/CategoryDropdown'
 
 const timeline = [
   { year: '2008–2012', title: 'Internat de cardiologie', org: 'Université de Bordeaux-Segalen' },
@@ -14,14 +13,17 @@ const timeline = [
   { year: '2020–', title: 'Cheffe d’unité · cardiologie & arythmie', org: 'Hôpital Américain de Paris' },
 ]
 
+// Concise dropdown items — closed shows year + name, open reveals institution + location.
 const diplomas = [
-  'Échographie cardiaque · Bordeaux (2011)',
-  'DESS cardiologie et maladies vasculaires · Bordeaux (2012)',
-  'Doctorat en sciences médicales · Bordeaux (2012)',
-  'Master 2 sciences de la vie et de la santé · Paris Diderot (2014)',
-  'DIU rythmologie, stimulation et défibrillation · Bordeaux (2015)',
-  'Executive MSc Health Economics (MBA) · LSE (2021)',
+  { year: '2011', name: 'Échographie cardiaque', institution: 'Université Bordeaux Segalen', location: 'Bordeaux, France' },
+  { year: '2012', name: 'DESS de cardiologie et maladies vasculaires', institution: 'Université Bordeaux Segalen', location: 'Bordeaux, France' },
+  { year: '2012', name: 'Doctorat en sciences médicales', institution: 'Université Bordeaux Segalen', location: 'Bordeaux, France' },
+  { year: '2014', name: 'Master 2 — sciences de la vie et de la santé', institution: 'Université Paris 7 · Diderot', location: 'Paris, France' },
+  { year: '2015', name: 'DIU de rythmologie, stimulation et défibrillation', institution: 'Université Bordeaux Segalen', location: 'Bordeaux, France' },
+  { year: '2021', name: 'Executive MSc / MBA — Health Economics', institution: 'London School of Economics', location: 'Londres, Royaume-Uni' },
 ]
+
+const experiences = timeline.map((t) => ({ year: t.year, name: t.title, institution: t.org }))
 
 export default function About() {
   return (
@@ -40,8 +42,12 @@ export default function About() {
       <Section className="py-20">
         <Container className="grid gap-12 lg:grid-cols-[1fr_1.4fr]">
           <Reveal>
-            <PhotoFrame className="lg:sticky lg:top-28" ratio="4/5"
-              src="/dr_photo_2.jpeg" alt="Dr Sana Amraoui" label="Portrait éditorial · Dr Amraoui" />
+            {/* Background-removed cut-out — sits naturally on the cream page, no frame/box */}
+            <img
+              src="/about-amraoui-v2.png"
+              alt="Dr Sana Amraoui, cardiologue rythmologue"
+              className="mx-auto w-full max-w-sm lg:sticky lg:top-28"
+            />
           </Reveal>
           <Reveal delay={0.1}>
             <div className="space-y-5 text-slate">
@@ -65,38 +71,14 @@ export default function About() {
                 Femme leader dans une sur-spécialité encore très masculine, elle s’engage pour la
                 place des femmes en cardiologie interventionnelle.
               </p>
+            </div>
 
-              <div className="!mt-10">
-                <Eyebrow>Diplômes</Eyebrow>
-                <ul className="mt-4 grid gap-2 sm:grid-cols-2">
-                  {diplomas.map((d) => (
-                    <li key={d} className="flex items-start gap-3 text-sm text-ink">
-                      <PulseMarker /> {d}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            {/* Parcours — two independent dropdowns under the bio, within the right column */}
+            <div className="mt-10 grid items-start gap-4 sm:grid-cols-2">
+              <CategoryDropdown title="Diplômes" items={diplomas} />
+              <CategoryDropdown title="Expériences" items={experiences} />
             </div>
           </Reveal>
-        </Container>
-      </Section>
-
-      <Section className="border-t border-ink/8 py-20">
-        <Container>
-          <Reveal><Eyebrow>Expériences</Eyebrow></Reveal>
-          <div className="mt-10 space-y-px">
-            {timeline.map((t, i) => (
-              <Reveal key={t.title} delay={i * 0.05}>
-                <div className="grid grid-cols-[auto_1fr] gap-6 border-t border-ink/8 py-5 sm:grid-cols-[160px_1fr]">
-                  <span className="font-mono text-xs uppercase tracking-eyebrow text-gold">{t.year}</span>
-                  <div>
-                    <p className="font-display text-lg text-ink">{t.title}</p>
-                    <p className="text-sm text-slate">{t.org}</p>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
         </Container>
       </Section>
 

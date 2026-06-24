@@ -32,19 +32,27 @@ export default function ApneeSommeil() {
         answer="Le syndrome d’apnées-hypopnées obstructives du sommeil (SAHOS) interrompt la respiration de façon répétée pendant la nuit. À chaque pause, le cœur subit un stress intense, ce qui en fait une cause fréquente de fibrillation atriale."
       />
 
-      <Section className="pt-12">
+      {/* Image left · stats as cards on the side (FA-style); stacks on mobile */}
+      <Section className="py-14">
         <Container>
-          <Reveal>
-            <PhotoFrame ratio="16/9" src="/apnee-sommeil.png" alt="Enregistrement du sommeil à domicile (polygraphie)" label="Dépistage du sommeil · polygraphie" />
-          </Reveal>
-        </Container>
-      </Section>
-
-      <Section className="py-16">
-        <Container className="grid gap-10 sm:grid-cols-3">
-          <Reveal><AnimatedStat value="2 000 000" label="personnes touchées en France (modérée à sévère)" /></Reveal>
-          <Reveal delay={0.08}><AnimatedStat value="95 %" label="des cas sont des apnées obstructives" /></Reveal>
-          <Reveal delay={0.16}><AnimatedStat value="La majorité" label="des cas ne sont pas diagnostiqués" /></Reveal>
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
+            <Reveal>
+              <PhotoFrame ratio="4/3" src="/apnee-sommeil.png" alt="Enregistrement du sommeil à domicile (polygraphie)" label="Dépistage du sommeil · polygraphie" />
+            </Reveal>
+            <Reveal delay={0.1}>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 lg:grid-cols-1">
+                <div className="rounded-xl2 border border-marine/8 bg-craie-pure p-5 shadow-card">
+                  <AnimatedStat value="2 000 000" label="personnes touchées en France (modérée à sévère)" />
+                </div>
+                <div className="rounded-xl2 border border-marine/8 bg-craie-pure p-5 shadow-card">
+                  <AnimatedStat value="95 %" label="des cas sont des apnées obstructives" />
+                </div>
+                <div className="rounded-xl2 border border-marine/8 bg-craie-pure p-5 shadow-card">
+                  <AnimatedStat value="La majorité" label="des cas ne sont pas diagnostiqués" />
+                </div>
+              </div>
+            </Reveal>
+          </div>
         </Container>
       </Section>
 

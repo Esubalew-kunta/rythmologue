@@ -89,7 +89,7 @@ export const treatmentVideos = [
     desc: 'En quoi consiste l’intervention, comment elle se déroule, et ce qu’elle permet.',
     audience: 'Patients',
     duration: '2–4 min',
-    url: 'https://www.youtube.com/watch?v=VKK9bjPB', // ⚠ ID looks truncated (8 chars, expected 11) — shows placeholder until corrected
+    url: 'https://www.youtube.com/watch?v=VKK9bjPBDpg',
   },
   {
     title: 'L’électroporation, une énergie de nouvelle génération',

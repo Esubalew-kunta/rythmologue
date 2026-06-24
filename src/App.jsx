@@ -119,6 +119,7 @@ export default function App() {
           <Route
             path="/cardio-check-up"
             element={<Simple path="/cardio-check-up" crumbs={[{ label: 'Cardio Check-Up' }]}
+              photo="Centre Cardio Check-Up · espace d’accueil"
               eyebrow="Prévention" title="Cardio Check-Up : la prévention cardiovasculaire repensée"
               answer="Fondé et dirigé par le Dr Amraoui, Cardio Check-Up est un centre dédié au bilan cardiovasculaire personnalisé et à la prévention proactive."
               blocks={[

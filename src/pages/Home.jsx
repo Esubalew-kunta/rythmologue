@@ -15,17 +15,17 @@ function HeroHeadline() {
   const lines = [['L’électricité'], ['du', 'cœur.'], ['Maîtrisée.']]
   let wordIndex = 0
   return (
-    <h1 className="font-display text-5xl font-semibold leading-[1.05] tracking-tightish text-craie sm:text-6xl lg:text-7xl">
+    <h1 className="font-display text-5xl font-semibold leading-[1.05] tracking-tightish text-marine sm:text-6xl lg:text-7xl">
       {lines.map((line, li) => (
         <span key={li} className="block">
           {line.map((word) => {
             const i = wordIndex++
             const accent = word === 'Maîtrisée.'
-            if (reduce) return <span key={i} className={accent ? 'italic text-or' : ''}>{word} </span>
+            if (reduce) return <span key={i} className={accent ? 'italic text-or-patine' : ''}>{word} </span>
             return (
               <motion.span
                 key={i}
-                className={`inline-block ${accent ? 'italic text-or' : ''}`}
+                className={`inline-block ${accent ? 'italic text-or-patine' : ''}`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.15 + i * 0.08, duration: 0.6, ease }}
@@ -84,17 +84,17 @@ export default function Home() {
         schema={physicianSchema}
       />
 
-      {/* ── A · HERO (dark editorial) ─────────────────────────────────────── */}
-      <Section className="relative overflow-hidden bg-encre text-craie">
-        <div className="absolute inset-0 bg-gradient-to-br from-encre via-encre to-prune-deep/60" aria-hidden />
-        <div className="absolute inset-0 bg-grid opacity-[0.07]" aria-hidden />
+      {/* ── A · HERO (light — calm on arrival, Change 2) ──────────────────── */}
+      <Section className="relative overflow-hidden bg-craie text-ardoise">
+        <div className="absolute inset-0 bg-grid opacity-60" aria-hidden />
+        <div className="absolute -right-40 -top-24 -z-0 h-[520px] w-[520px] rounded-full bg-signal/5 blur-3xl" aria-hidden />
         <Container className="relative grid items-center gap-10 pb-14 pt-28 sm:pt-36 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12 lg:pb-20 lg:pt-44">
           {/* Photo — first on mobile (full-bleed feel), right on desktop */}
           <div className="order-1 lg:order-2">
             <div className="relative">
-              <PhotoFrame ratio="4/5" tone="dark" label="Portrait éditorial · Dr Amraoui" className="mx-auto max-w-sm border border-craie/10" />
-              <div className="absolute -bottom-4 -left-3 hidden rounded-card bg-craie px-4 py-2.5 text-ardoise shadow-lift sm:block">
-                <span className="block font-mono text-[10px] uppercase tracking-eyebrow text-or-patine">London School of Economics</span>
+              <PhotoFrame ratio="4/5" tone="light" label="Portrait éditorial · Dr Amraoui" className="mx-auto max-w-sm border border-marine/10" />
+              <div className="absolute -bottom-4 -left-3 hidden rounded-card bg-marine px-4 py-2.5 text-craie shadow-lift sm:block">
+                <span className="block font-mono text-[10px] uppercase tracking-eyebrow text-or">London School of Economics</span>
                 <span className="text-sm font-semibold">Health Economics · MBA</span>
               </div>
             </div>
@@ -102,18 +102,18 @@ export default function Home() {
 
           <div className="order-2 lg:order-1">
             <Reveal>
-              <p className="eyebrow text-or">Cardiologue · Rythmologue interventionnelle</p>
+              <p className="eyebrow">Cardiologue · Rythmologue interventionnelle</p>
             </Reveal>
             <div className="mt-5">
               <HeroHeadline />
             </div>
             <Reveal delay={0.5}>
               <div className="mt-6 max-w-prose">
-                <ECGLine variant="resolved" height={48} className="text-petrole-glow" stroke="#2E8A8F" />
+                <ECGLine variant="resolved" height={52} stroke="#1C5E63" />
               </div>
             </Reveal>
             <Reveal delay={0.55}>
-              <p className="mt-5 max-w-prose text-craie/70">
+              <p className="mt-5 max-w-prose text-lg text-brume">
                 Dr Sana Amraoui · Cardiologue rythmologue · Cheffe d’unité, Hôpital Américain de Paris.
               </p>
             </Reveal>
@@ -124,7 +124,7 @@ export default function Home() {
                 </Button>
                 <a
                   href="#approche"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-card border border-craie/25 px-6 py-3.5 text-sm font-semibold text-craie transition-colors hover:border-or hover:text-or sm:w-auto"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-card border border-marine/30 px-6 py-3.5 text-sm font-semibold text-marine transition-colors hover:border-signal hover:text-signal sm:w-auto"
                 >
                   Découvrir mon approche
                 </a>
@@ -134,10 +134,10 @@ export default function Home() {
         </Container>
 
         {/* Bottom stat strip */}
-        <div className="relative border-t border-craie/10">
+        <div className="relative border-t border-marine/10">
           <Container className="grid gap-3 py-5 sm:grid-cols-3">
             {heroStats.map((s) => (
-              <p key={s} className="font-mono text-[11px] uppercase tracking-[0.12em] text-craie/55">{s}</p>
+              <p key={s} className="font-mono text-[11px] uppercase tracking-[0.12em] text-brume">{s}</p>
             ))}
           </Container>
         </div>
@@ -146,7 +146,7 @@ export default function Home() {
       {/* ── B · TRUST BAR ─────────────────────────────────────────────────── */}
       <Section className="border-b border-ardoise/8 bg-craie-soft/50">
         <Container className="py-6">
-          <div className="flex snap-x snap-mandatory gap-x-8 gap-y-2 overflow-x-auto sm:flex-wrap sm:justify-center sm:overflow-visible">
+          <div className="scroll-strip flex snap-x snap-mandatory gap-x-8 gap-y-2 overflow-x-auto sm:flex-wrap sm:justify-center sm:overflow-visible">
             {institutions.map((n) => (
               <span key={n} className="shrink-0 snap-start whitespace-nowrap font-display text-base text-brume">{n}</span>
             ))}
@@ -233,7 +233,7 @@ export default function Home() {
       <Section className="py-20 lg:py-28">
         <Container className="grid items-center gap-12 lg:grid-cols-2">
           <Reveal>
-            <PhotoFrame ratio="3/4" label="Dr Amraoui · en milieu clinique" />
+            <PhotoFrame ratio="3/4" label="Salle d’électrophysiologie · Hôpital Américain de Paris" />
           </Reveal>
           <Reveal delay={0.1}>
             <div>
@@ -281,12 +281,12 @@ export default function Home() {
               <Link to="/blog" className="link-underline text-sm font-semibold text-ardoise">Tout le blog →</Link>
             </div>
           </Reveal>
-          <div className="mt-10 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-2 md:grid md:grid-cols-3 md:overflow-visible">
+          <div className="scroll-strip mt-10 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-2 md:grid md:grid-cols-3 md:overflow-visible">
             {articles.map((a, i) => (
               <Reveal key={a.slug} delay={i * 0.08} className="min-w-[78%] snap-start sm:min-w-[42%] md:min-w-0">
                 <Link to={`/blog/${a.slug}`} className="group flex h-full flex-col rounded-xl2 border border-ardoise/8 bg-craie-pure p-6 shadow-card transition-all duration-200 hover:-translate-y-1 hover:shadow-lift">
                   <div className="flex items-center justify-between">
-                    <span className={`rounded-full px-2.5 py-1 text-2xs font-semibold ${a.stream === 'Guide' ? 'bg-prune/10 text-prune' : 'bg-or/15 text-or-patine'}`}>{a.stream}</span>
+                    <span className={`rounded-full px-2.5 py-1 text-2xs font-semibold ${a.kind === 'Guide' ? 'bg-signal/10 text-signal' : 'bg-or/15 text-or-patine'}`}>{a.kind}</span>
                     <span className="font-mono text-[10px] uppercase tracking-eyebrow text-brume">{a.read}</span>
                   </div>
                   <h3 className="mt-4 font-display text-xl leading-snug text-ardoise group-hover:text-prune">{a.title}</h3>
@@ -349,17 +349,17 @@ export default function Home() {
       </Section>
 
       {/* ── J · FINAL CTA + CONTACT ───────────────────────────────────────── */}
-      <Section className="bg-prune py-20 text-craie lg:py-24">
+      <Section className="bg-marine py-20 text-craie lg:py-24">
         <Container className="text-center">
           <Reveal>
-            <Eyebrow><span className="text-or-soft">Besoin d’un avis ?</span></Eyebrow>
+            <Eyebrow><span className="text-or">Besoin d’un avis ?</span></Eyebrow>
             <h2 className="mx-auto mt-5 max-w-3xl text-4xl text-craie sm:text-5xl">Remettons votre cœur en rythme.</h2>
             <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <a
                 href={DOCTOLIB_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full rounded-card bg-craie px-7 py-4 text-base font-semibold text-prune transition-transform hover:-translate-y-0.5 sm:w-auto"
+                className="w-full rounded-card bg-signal px-7 py-4 text-base font-semibold text-craie shadow-accent transition-transform hover:-translate-y-0.5 sm:w-auto"
               >
                 Prendre rendez-vous →
               </a>

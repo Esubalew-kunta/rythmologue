@@ -3,17 +3,26 @@ import Seo from '../components/ui/Seo'
 import PageHero from '../components/ui/PageHero'
 import { Container, Section, Reveal } from '../components/ui/primitives'
 import InlineCTA from '../components/ui/InlineCTA'
+import PulseMarker from '../components/brand/PulseMarker'
+import PhotoFrame from '../components/ui/PhotoFrame'
 
 /**
  * Content page with prose blocks. Used for pages whose copy exists
  * (montres, cardio check-up, legal) and as a graceful placeholder for
  * pages still to be written (clearly labelled, never a dead end).
  */
-export default function Simple({ path, eyebrow, title, answer, crumbs, blocks = [], variant = 'calm', draft = false, cta = true }) {
+export default function Simple({ path, eyebrow, title, answer, crumbs, blocks = [], variant = 'calm', draft = false, cta = true, photo }) {
   return (
     <>
       <Seo path={path} title={title} description={answer} />
       <PageHero crumbs={crumbs} eyebrow={eyebrow} title={title} answer={answer} variant={variant} />
+      {photo && (
+        <Section className="pt-12">
+          <Container>
+            <Reveal><PhotoFrame ratio="16/9" label={photo} /></Reveal>
+          </Container>
+        </Section>
+      )}
       <Section className="py-16">
         <Container className="max-w-reading">
           {draft && (
@@ -27,7 +36,7 @@ export default function Simple({ path, eyebrow, title, answer, crumbs, blocks = 
               {b.p && <p className="mt-4 text-slate">{b.p}</p>}
               {b.list && (
                 <ul className="mt-4 space-y-2">
-                  {b.list.map((li) => <li key={li} className="flex items-start gap-2.5 text-slate"><span aria-hidden className="mt-[0.6em] h-px w-3 shrink-0 bg-signal" /> {li}</li>)}
+                  {b.list.map((li) => <li key={li} className="flex items-start gap-3 text-slate"><PulseMarker /> {li}</li>)}
                 </ul>
               )}
             </Reveal>

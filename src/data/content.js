@@ -81,29 +81,98 @@ export const faPagFaq = [
 ]
 
 // Seeded from the live blog (Actualités) + planned cornerstone Guides.
+// The blog's five fixed categories (Change 4c).
+export const blogCategories = [
+  { key: 'fibrillation', label: 'Fibrillation & Arythmies' },
+  { key: 'traitements', label: 'Traitements & Interventions' },
+  { key: 'examens', label: 'Examens & Diagnostic' },
+  { key: 'apnee', label: 'Apnée & Sommeil' },
+  { key: 'actualites', label: 'Actualités' },
+]
+
+export const categoryLabel = (key) =>
+  blogCategories.find((c) => c.key === key)?.label ?? key
+
+// One seeded article per category; the four real posts live under Actualités.
 export const articles = [
   {
     slug: 'fibrillation-atriale-2026',
-    stream: 'Guide',
+    category: 'fibrillation',
+    kind: 'Guide',
     title: 'Fibrillation atriale : symptômes, risques et traitements en 2026',
     excerpt:
       'Tout comprendre de l’arythmie la plus fréquente au monde, et des options qui, traitées tôt, offrent une possibilité de guérison.',
     read: '9 min',
+    date: '2026',
   },
   {
-    stream: 'Guide',
     slug: 'ablation-radiofrequence-cryo-electroporation',
+    category: 'traitements',
+    kind: 'Guide',
     title: 'Ablation par cathéter : radiofréquence, cryoablation ou électroporation ?',
     excerpt:
       'Trois énergies, trois logiques. Le seul comparatif francophone écrit par une praticienne de l’électroporation.',
     read: '11 min',
+    date: '2026',
   },
   {
-    stream: 'Actualité',
+    slug: 'montres-connectees-ecg',
+    category: 'examens',
+    kind: 'Guide',
+    title: 'Montres connectées et ECG : que valent-elles vraiment pour le cœur ?',
+    excerpt:
+      'Dépistage, ECG à une dérivation, télésuivi : ce que ces objets détectent réellement, et leurs limites.',
+    read: '6 min',
+    date: '2026',
+  },
+  {
+    slug: 'apnee-sommeil-coeur',
+    category: 'apnee',
+    kind: 'Guide',
+    title: 'Apnée du sommeil et cœur : le lien que l’on ignore',
+    excerpt:
+      'Pourquoi traiter l’apnée du sommeil est souvent indispensable pour ne pas voir récidiver une arythmie.',
+    read: '7 min',
+    date: '2026',
+  },
+  {
     slug: 'ehra-2026',
+    category: 'actualites',
+    kind: 'Actualité',
     title: 'EHRA 2026 : le Dr Amraoui au cœur des échanges',
     excerpt:
       'Retour du congrès de l’European Heart Rhythm Association, où se dessine l’avenir de la rythmologie interventionnelle.',
     read: '4 min',
+    date: '2026',
+  },
+  {
+    slug: 'parisante-campus',
+    category: 'actualites',
+    kind: 'Actualité',
+    title: 'Le Dr Amraoui à PariSanté Campus',
+    excerpt:
+      'Table ronde sur l’intelligence artificielle appliquée à la prise en charge des troubles du rythme cardiaque.',
+    read: '3 min',
+    date: '2026',
+  },
+  {
+    slug: 'systeme-affera',
+    category: 'actualites',
+    kind: 'Actualité',
+    title: 'Le système Affera en rythmologie',
+    excerpt:
+      'Une avancée dans le traitement de la fibrillation atriale et du flutter atrial.',
+    read: '5 min',
+    date: '2026',
+  },
+  {
+    slug: 'forum-marocains-du-monde-tanger',
+    category: 'actualites',
+    kind: 'Actualité',
+    title: 'Le Dr Amraoui au Forum des Marocains du Monde, Tanger',
+    excerpt:
+      'Engagement international et place de la prévention cardiovasculaire au sein de la diaspora.',
+    read: '4 min',
+    date: '2026',
   },
 ]

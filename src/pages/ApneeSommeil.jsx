@@ -4,6 +4,7 @@ import PageHero from '../components/ui/PageHero'
 import { Container, Section, Eyebrow, Reveal } from '../components/ui/primitives'
 import AnimatedStat from '../components/ui/AnimatedStat'
 import InlineCTA from '../components/ui/InlineCTA'
+import PulseMarker from '../components/brand/PulseMarker'
 
 const types = [
   { name: 'Apnée obstructive', tag: '95 % des cas', desc: 'Blocage mécanique des voies respiratoires : relâchement des tissus, surpoids, anatomie.' },
@@ -48,9 +49,9 @@ export default function ApneeSommeil() {
                 risque de récidive est beaucoup plus élevé. »
               </p>
               <ul className="mt-6 grid gap-3 sm:grid-cols-3">
-                <li className="flex items-start gap-2.5 text-sm text-slate"><span aria-hidden className="mt-[0.6em] h-px w-3 shrink-0 bg-signal" /> Perturbations du rythme (FA, bradycardie nocturne)</li>
-                <li className="flex items-start gap-2.5 text-sm text-slate"><span aria-hidden className="mt-[0.6em] h-px w-3 shrink-0 bg-signal" /> Hypertension artérielle persistante</li>
-                <li className="flex items-start gap-2.5 text-sm text-slate"><span aria-hidden className="mt-[0.6em] h-px w-3 shrink-0 bg-signal" /> Risque accru d’infarctus et d’AVC</li>
+                <li className="flex items-start gap-2.5 text-sm text-slate"><PulseMarker /> Perturbations du rythme (FA, bradycardie nocturne)</li>
+                <li className="flex items-start gap-2.5 text-sm text-slate"><PulseMarker /> Hypertension artérielle persistante</li>
+                <li className="flex items-start gap-2.5 text-sm text-slate"><PulseMarker /> Risque accru d’infarctus et d’AVC</li>
               </ul>
             </div>
           </Reveal>
@@ -79,13 +80,13 @@ export default function ApneeSommeil() {
           <Reveal>
             <div className="rounded-card border border-ink/8 bg-ink p-7 text-paper">
               <p className="font-mono text-2xs uppercase tracking-eyebrow text-paper/40">La nuit</p>
-              <ul className="mt-4 space-y-2 text-sm text-paper/80">{symptoms.nuit.map((s) => <li key={s} className="flex items-start gap-2.5"><span aria-hidden className="mt-[0.6em] h-px w-3 shrink-0 bg-signal-glow" /> {s}</li>)}</ul>
+              <ul className="mt-4 space-y-2 text-sm text-paper/80">{symptoms.nuit.map((s) => <li key={s} className="flex items-start gap-2.5"><PulseMarker className="text-petrole-glow" /> {s}</li>)}</ul>
             </div>
           </Reveal>
           <Reveal delay={0.08}>
             <div className="rounded-card border border-ink/8 bg-paper-pure p-7">
               <p className="font-mono text-2xs uppercase tracking-eyebrow text-gold">Le jour</p>
-              <ul className="mt-4 space-y-2 text-sm text-slate">{symptoms.jour.map((s) => <li key={s} className="flex items-start gap-2.5"><span aria-hidden className="mt-[0.6em] h-px w-3 shrink-0 bg-signal" /> {s}</li>)}</ul>
+              <ul className="mt-4 space-y-2 text-sm text-slate">{symptoms.jour.map((s) => <li key={s} className="flex items-start gap-2.5"><PulseMarker /> {s}</li>)}</ul>
             </div>
           </Reveal>
         </Container>

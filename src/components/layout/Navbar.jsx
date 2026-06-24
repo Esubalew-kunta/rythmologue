@@ -57,9 +57,9 @@ export default function Navbar() {
 
   useEffect(() => { setOpenDrawer(false); setOpenMenu(null) }, [pathname])
 
-  // On the homepage the nav floats over the dark hero (white text) until 50px.
-  const overHero = pathname === '/' && !scrolled
-  const textCls = overHero ? 'text-craie' : 'text-ardoise'
+  // Hero is now light (Change 2), so nav text stays marine in every state;
+  // only the background frosts in on scroll.
+  const textCls = 'text-marine'
 
   const hoverOpen = (label) => { clearTimeout(closeTimer.current); setOpenMenu(label) }
   const hoverClose = () => { closeTimer.current = setTimeout(() => setOpenMenu(null), 120) }

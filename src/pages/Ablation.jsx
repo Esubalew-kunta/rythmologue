@@ -2,6 +2,7 @@ import Seo from '../components/ui/Seo'
 import PageHero from '../components/ui/PageHero'
 import { Container, Section, Eyebrow, Reveal } from '../components/ui/primitives'
 import InlineCTA from '../components/ui/InlineCTA'
+import PhotoFrame from '../components/ui/PhotoFrame'
 import { energies } from '../data/content'
 
 const procSchema = {
@@ -56,6 +57,14 @@ export default function Ablation() {
                 sécurité.
               </p>
             </div>
+          </Reveal>
+        </Container>
+      </Section>
+
+      <Section className="pb-4">
+        <Container>
+          <Reveal>
+            <PhotoFrame ratio="16/9" label="Cartographie 3D en salle d’électrophysiologie · illustration de procédure" />
           </Reveal>
         </Container>
       </Section>

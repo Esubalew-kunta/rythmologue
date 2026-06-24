@@ -1,9 +1,9 @@
 // Single source of truth for contact + identity data.
 // Values reconciled with RESEARCH_rythmologue_audit.md (live site + Doctolib + Ameli).
 
+// Single canonical booking URL for every "Prendre rendez-vous" action (Change 4a).
 export const DOCTOLIB_URL =
   'https://www.doctolib.fr/cardiologue/neuilly-sur-seine/sana-amraoui'
-export const DOCTOLIB_APNEE_URL = `${DOCTOLIB_URL}?pid=practice-711205`
 
 export const site = {
   name: 'Dr Sana Amraoui',

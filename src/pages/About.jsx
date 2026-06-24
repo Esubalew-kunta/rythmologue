@@ -1,8 +1,9 @@
 import Seo, { physicianSchema } from '../components/ui/Seo'
 import PageHero from '../components/ui/PageHero'
 import { Container, Section, Eyebrow, Reveal } from '../components/ui/primitives'
-import Portrait from '../components/ui/Portrait'
+import PhotoFrame from '../components/ui/PhotoFrame'
 import InlineCTA from '../components/ui/InlineCTA'
+import PulseMarker from '../components/brand/PulseMarker'
 
 const timeline = [
   { year: '2008–2012', title: 'Internat de cardiologie', org: 'Université de Bordeaux-Segalen' },
@@ -39,8 +40,8 @@ export default function About() {
       <Section className="py-20">
         <Container className="grid gap-12 lg:grid-cols-[1fr_1.4fr]">
           <Reveal>
-            <Portrait className="lg:sticky lg:top-28" ratio="4/5"
-              caption="Dr Sana Amraoui · Rythmologue interventionnelle" />
+            <PhotoFrame className="lg:sticky lg:top-28" ratio="4/5"
+              label="Portrait éditorial · Dr Amraoui" />
           </Reveal>
           <Reveal delay={0.1}>
             <div className="space-y-5 text-slate">
@@ -69,8 +70,8 @@ export default function About() {
                 <Eyebrow>Diplômes</Eyebrow>
                 <ul className="mt-4 grid gap-2 sm:grid-cols-2">
                   {diplomas.map((d) => (
-                    <li key={d} className="flex items-start gap-2.5 text-sm text-ink">
-                      <span aria-hidden className="mt-[0.6em] h-px w-3 shrink-0 bg-signal" /> {d}
+                    <li key={d} className="flex items-start gap-3 text-sm text-ink">
+                      <PulseMarker /> {d}
                     </li>
                   ))}
                 </ul>

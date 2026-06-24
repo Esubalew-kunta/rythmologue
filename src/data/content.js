@@ -60,8 +60,8 @@ export const energies = [
 // Statistics presented as standalone, citable facts (GEO).
 export const stats = [
   { value: '45 M', label: 'personnes touchées par la FA dans le monde' },
-  { value: '×4,8', label: 'de risque d’AVC ischémique en cas de FA non traitée', alert: true },
-  { value: '1 / 4', label: 'adultes de plus de 40 ans développeront une FA' },
+  { value: '×4,8', label: 'risque d’AVC sans prise en charge, précisément ce que le traitement prévient' },
+  { value: '1 / 4', label: 'adultes de plus de 40 ans sont concernés par la FA au cours de leur vie' },
   { value: '230 000', label: 'nouveaux cas de FA par an en France' },
 ]
 

@@ -29,7 +29,7 @@ export default function ApneeSommeil() {
         crumbs={[{ label: 'Apnée du sommeil' }]}
         eyebrow="Apnée du sommeil"
         title="L’apnée du sommeil et votre cœur : comprendre pour mieux traiter"
-        answer="Le syndrome d’apnées-hypopnées obstructives du sommeil (SAHOS) interrompt la respiration de façon répétée pendant la nuit. À chaque pause, le cœur subit un stress intense, ce qui en fait une cause fréquente de fibrillation atriale."
+        answer="Le syndrome d’apnées-hypopnées obstructives du sommeil (SAHOS) interrompt la respiration de façon répétée pendant la nuit. Comme il sollicite beaucoup le cœur, il est souvent lié aux troubles du rythme, et le dépister est une étape clé pour bien les traiter."
       />
 
       {/* Image left · stats as cards on the side (FA-style); stacks on mobile */}
@@ -62,13 +62,13 @@ export default function ApneeSommeil() {
             <div className="rounded-xl2 border border-signal/30 bg-signal/5 p-8">
               <Eyebrow>Le lien avec le cœur</Eyebrow>
               <p className="mt-4 font-display text-2xl text-ink sm:text-3xl">
-                « Si nous traitons votre trouble du rythme sans traiter votre apnée du sommeil, le
-                risque de récidive est beaucoup plus élevé. »
+                « Traiter l’apnée en même temps que le trouble du rythme, c’est mettre toutes les
+                chances de votre côté pour un résultat durable. »
               </p>
               <ul className="mt-6 grid gap-3 sm:grid-cols-3">
-                <li className="flex items-start gap-2.5 text-sm text-slate"><PulseMarker /> Perturbations du rythme (FA, bradycardie nocturne)</li>
-                <li className="flex items-start gap-2.5 text-sm text-slate"><PulseMarker /> Hypertension artérielle persistante</li>
-                <li className="flex items-start gap-2.5 text-sm text-slate"><PulseMarker /> Risque accru d’infarctus et d’AVC</li>
+                <li className="flex items-start gap-2.5 text-sm text-slate"><PulseMarker /> Le rythme cardiaque : l’apnée favorise la FA</li>
+                <li className="flex items-start gap-2.5 text-sm text-slate"><PulseMarker /> La tension artérielle</li>
+                <li className="flex items-start gap-2.5 text-sm text-slate"><PulseMarker /> La santé cardiovasculaire au sens large</li>
               </ul>
             </div>
           </Reveal>

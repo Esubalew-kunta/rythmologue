@@ -55,9 +55,9 @@ const institutions = [
 ]
 
 const conditionCards = [
-  { slug: 'fibrillation-atriale', name: 'Fibrillation atriale', stat: 'Multiplie par 4,8 le risque d’AVC ischémique.' },
-  { slug: 'types-tachycardie', name: 'Tachycardie & bradycardie', stat: 'Un cœur trop rapide ou trop lent qui altère le quotidien.' },
-  { slug: '../apnee-du-sommeil', name: 'Apnée du sommeil', stat: 'Cause fréquente de FA : 2 M de personnes concernées en France.' },
+  { slug: 'fibrillation-atriale', name: 'Fibrillation atriale', stat: 'L’arythmie la plus fréquente, et l’une des mieux traitées aujourd’hui.' },
+  { slug: 'types-tachycardie', name: 'Tachycardie & bradycardie', stat: 'Un rythme trop rapide ou trop lent : identifiable, et traitable.' },
+  { slug: '../apnee-du-sommeil', name: 'Apnée du sommeil', stat: 'Souvent liée au cœur : un dépistage simple permet de bien la prendre en charge.' },
 ]
 
 const treatmentBlocks = [

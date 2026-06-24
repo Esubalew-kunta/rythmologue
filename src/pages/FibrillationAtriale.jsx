@@ -25,7 +25,7 @@ const faqSchema = {
     {
       '@type': 'Question',
       name: 'La fibrillation atriale est-elle dangereuse ?',
-      acceptedAnswer: { '@type': 'Answer', text: 'La FA multiplie par 4,8 le risque d’AVC ischémique et peut entraîner une insuffisance cardiaque sans traitement. Prise en charge tôt, elle se traite très efficacement.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Prise en charge tôt, la fibrillation atriale se traite très efficacement. Un suivi adapté permet de retrouver un rythme stable et de prévenir ses complications, dont l’AVC.' },
     },
     {
       '@type': 'Question',
@@ -47,7 +47,7 @@ export default function FibrillationAtriale() {
         crumbs={[{ label: 'Arythmies', href: '/arythmies' }, { label: 'Fibrillation atriale' }]}
         eyebrow="Arythmies · Fibrillation atriale"
         title="Fibrillation atriale : comprendre, pour mieux la traiter"
-        answer="La fibrillation atriale (FA) est l’arythmie la plus fréquente au monde. Elle se manifeste par des contractions rapides et irrégulières des oreillettes, et multiplie par 4,8 le risque d’AVC. Traitée tôt, elle se soigne pourtant très efficacement."
+        answer="La fibrillation atriale (FA) est l’arythmie la plus fréquente au monde, et l’une des mieux prises en charge aujourd’hui. Elle se manifeste par des battements rapides et irréguliers. Bien suivie et traitée tôt, elle se contrôle très efficacement ; c’est aussi la meilleure façon de prévenir ses complications."
       />
 
       {/* Stats */}
@@ -82,14 +82,14 @@ export default function FibrillationAtriale() {
             </div>
           </Reveal>
           <Reveal delay={0.1}>
-            <div className="rounded-xl2 border border-alert/30 bg-alert/5 p-7">
-              <p className="font-mono text-2xs uppercase tracking-eyebrow text-alert">Pourquoi agir</p>
+            <div className="rounded-xl2 border border-petrole/30 bg-petrole/5 p-7">
+              <p className="font-mono text-2xs uppercase tracking-eyebrow text-petrole">Le bon moment</p>
               <p className="mt-3 font-display text-2xl text-ink">
-                La FA est récurrente et évolutive.
+                Prise tôt, la FA se traite très bien.
               </p>
               <p className="mt-3 text-slate">
-                Un traitement précoce est associé à un meilleur taux de succès. Sans prise en
-                charge, le risque d’AVC et d’insuffisance cardiaque augmente.
+                Plus elle est prise en charge tôt, meilleurs sont les résultats : c’est le moyen le
+                plus sûr de retrouver un rythme stable et de prévenir les complications.
               </p>
             </div>
           </Reveal>

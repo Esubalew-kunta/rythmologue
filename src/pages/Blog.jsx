@@ -20,7 +20,7 @@ export default function Blog() {
         crumbs={[{ label: 'Blog' }]}
         eyebrow="Comprendre & suivre"
         title="Guides & actualités"
-        answer="Des guides patients pensés pour être clairs et fiables, et les actualités de la rythmologie interventionnelle — classés par thème."
+        answer="Des guides patients pensés pour être clairs et fiables, et les actualités de la rythmologie interventionnelle, classés par thème."
       />
 
       <Section className="py-12">

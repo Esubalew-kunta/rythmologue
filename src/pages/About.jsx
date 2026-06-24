@@ -18,9 +18,9 @@ const diplomas = [
   { year: '2011', name: 'Échographie cardiaque', institution: 'Université Bordeaux Segalen', location: 'Bordeaux, France' },
   { year: '2012', name: 'DESS de cardiologie et maladies vasculaires', institution: 'Université Bordeaux Segalen', location: 'Bordeaux, France' },
   { year: '2012', name: 'Doctorat en sciences médicales', institution: 'Université Bordeaux Segalen', location: 'Bordeaux, France' },
-  { year: '2014', name: 'Master 2 — sciences de la vie et de la santé', institution: 'Université Paris 7 · Diderot', location: 'Paris, France' },
+  { year: '2014', name: 'Master 2 en sciences de la vie et de la santé', institution: 'Université Paris 7 · Diderot', location: 'Paris, France' },
   { year: '2015', name: 'DIU de rythmologie, stimulation et défibrillation', institution: 'Université Bordeaux Segalen', location: 'Bordeaux, France' },
-  { year: '2021', name: 'Executive MSc / MBA — Health Economics', institution: 'London School of Economics', location: 'Londres, Royaume-Uni' },
+  { year: '2021', name: 'Executive MSc / MBA · Health Economics', institution: 'London School of Economics', location: 'Londres, Royaume-Uni' },
 ]
 
 const experiences = timeline.map((t) => ({ year: t.year, name: t.title, institution: t.org }))

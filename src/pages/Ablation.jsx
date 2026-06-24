@@ -74,7 +74,7 @@ export default function Ablation() {
                 <h2 className="mt-4 text-3xl font-semibold">Une plateforme technologique de pointe</h2>
                 <p className="mt-4 text-slate">
                   Chaque geste est guidé par une cartographie tridimensionnelle du cœur, dans un
-                  centre d’expertise accrédité — l’Hôpital Américain de Paris.
+                  centre d’expertise accrédité, l’Hôpital Américain de Paris.
                 </p>
                 <ul className="mt-6 space-y-2.5">
                   <li className="flex items-start gap-3 text-slate"><PulseMarker /> Cartographie 3D en temps réel</li>

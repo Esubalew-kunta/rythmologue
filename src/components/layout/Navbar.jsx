@@ -67,6 +67,7 @@ export default function Navbar() {
   const isActive = (href) => pathname === href || pathname.startsWith(href + '/')
 
   return (
+    <>
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ease-calm ${
         scrolled ? 'bg-craie/90 shadow-nav backdrop-blur-md' : 'bg-transparent'
@@ -185,7 +186,12 @@ export default function Navbar() {
         </div>
       </div>
 
-      <MobileDrawer open={openDrawer} onClose={() => setOpenDrawer(false)} nav={primaryNav} />
     </header>
+
+    {/* Rendered OUTSIDE <header>: the scrolled header uses backdrop-filter,
+        which would otherwise become the containing block for this fixed
+        overlay and mis-position it after scrolling. */}
+    <MobileDrawer open={openDrawer} onClose={() => setOpenDrawer(false)} nav={primaryNav} />
+    </>
   )
 }

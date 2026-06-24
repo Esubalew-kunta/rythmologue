@@ -4,8 +4,8 @@ import ECGLine from '../brand/ECGLine'
 
 export default function Footer() {
   return (
-    <footer className="relative mt-24 overflow-hidden bg-ink text-paper/80">
-      <ECGLine variant="calm" height={70} className="absolute inset-x-0 top-0 text-paper opacity-20" stroke="var(--signal)" />
+    <footer className="relative mt-24 overflow-hidden bg-encre text-paper/80">
+      <ECGLine variant="calm" height={70} className="absolute inset-x-0 top-0 opacity-25" stroke="#2E8A8F" />
       <div className="container-edge grid gap-12 pb-28 pt-20 sm:pb-16 md:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
         <div>
           <p className="font-display text-2xl font-semibold text-paper">Dr Sana Amraoui</p>

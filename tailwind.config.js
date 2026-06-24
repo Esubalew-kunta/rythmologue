@@ -4,88 +4,58 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Brand tokens — see DESIGN_PLAN.md §B
-        ink: {
-          DEFAULT: '#0E1B2A', // Encre / Ink Navy — text + authority surfaces
-          soft: '#1B2C3E',
-          mute: '#33485C',
-        },
-        paper: {
-          DEFAULT: '#F7F5F0', // Papier / Clinical Paper — primary background
-          warm: '#EFEBE2',
-          pure: '#FFFFFF',
-        },
-        signal: {
-          DEFAULT: '#0FB5A6', // Signal / Electric Teal — the brand spark
-          deep: '#0A8C82',
-          glow: '#3FD9CC',
-        },
-        gold: {
-          DEFAULT: '#C8A24B', // Or / Diploma Gold — prestige accents
-          soft: '#DCC089',
-        },
-        slate: {
-          DEFAULT: '#5B6B7A', // Brume / Mist Slate — secondary text/UI
-          light: '#8A98A4',
-        },
-        alert: {
-          DEFAULT: '#E0744F', // Alerte / Soft Coral — risk callouts + errors ONLY
-          soft: '#F1C4B2',
-        },
+        // ── "Prune Clinique" palette (see DESIGN_PLAN.md §B / critique) ──────
+        prune: { DEFAULT: '#6C2A52', deep: '#4A1D38', soft: '#9A5F82' }, // primary accent
+        encre: { DEFAULT: '#1E1A2A', nuit: '#14111D' },                  // dark surfaces / drawer
+        or: { DEFAULT: '#CBB388', patine: '#A98C5F', soft: '#E2D2B0' },  // academic champagne gold
+        ardoise: { DEFAULT: '#2A3140', soft: '#3C4456' },                // slate-navy body ink
+        brume: { DEFAULT: '#6E7585', light: '#9AA0AD' },                 // muted secondary
+        craie: { DEFAULT: '#F6F2EA', soft: '#EFE9DD', pure: '#FCFAF5' }, // cream backgrounds
+        petrole: { DEFAULT: '#1C5E63', glow: '#2E8A8F' },                // NEW anchor — electric/ECG
+
+        // ── Legacy aliases → remapped to the new palette so every existing
+        //    page re-skins automatically without touching its classes. ───────
+        ink: { DEFAULT: '#232B3B', soft: '#313A4D', mute: '#46506A' },
+        paper: { DEFAULT: '#F6F2EA', warm: '#EFE9DD', pure: '#FCFAF5' },
+        signal: { DEFAULT: '#6C2A52', deep: '#4A1D38', glow: '#9A5F82' },
+        gold: { DEFAULT: '#CBB388', soft: '#E2D2B0' },
+        slate: { DEFAULT: '#6E7585', light: '#9AA0AD' },
+        alert: { DEFAULT: '#B0414C', soft: '#E7B8BE' }, // risk callouts + errors ONLY
       },
       fontFamily: {
-        // Display: Fraunces · Body: Hanken Grotesk · Utility: IBM Plex Mono
-        display: ['Fraunces', 'Georgia', 'serif'],
-        sans: ['"Hanken Grotesk"', 'system-ui', 'sans-serif'],
-        mono: ['"IBM Plex Mono"', 'ui-monospace', 'monospace'],
+        // Display: Cormorant Garamond · Body: Inter · Utility: JetBrains Mono
+        display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
       },
       fontSize: {
-        // mobile-first scale (rem)
         '2xs': ['0.75rem', { lineHeight: '1.4' }],
         xs: ['0.8125rem', { lineHeight: '1.5' }],
         sm: ['0.9375rem', { lineHeight: '1.6' }],
-        base: ['1.0625rem', { lineHeight: '1.7' }],
-        lg: ['1.1875rem', { lineHeight: '1.6' }],
-        xl: ['1.375rem', { lineHeight: '1.45' }],
-        '2xl': ['1.75rem', { lineHeight: '1.25' }],
-        '3xl': ['2.25rem', { lineHeight: '1.15' }],
-        '4xl': ['3rem', { lineHeight: '1.05' }],
-        '5xl': ['3.75rem', { lineHeight: '1.0' }],
-        '6xl': ['4.75rem', { lineHeight: '0.98' }],
+        base: ['1rem', { lineHeight: '1.65' }],
+        lg: ['1.1875rem', { lineHeight: '1.55' }],
+        xl: ['1.375rem', { lineHeight: '1.4' }],
+        '2xl': ['1.75rem', { lineHeight: '1.2' }],
+        '3xl': ['2.25rem', { lineHeight: '1.12' }],
+        '4xl': ['2.75rem', { lineHeight: '1.08' }],
+        '5xl': ['3.5rem', { lineHeight: '1.04' }],
+        '6xl': ['4.5rem', { lineHeight: '1.0' }],
+        '7xl': ['5.5rem', { lineHeight: '0.98' }],
       },
-      letterSpacing: {
-        eyebrow: '0.22em',
-      },
-      borderRadius: {
-        // soft-clinical: never fully pill on cards; precise corners
-        card: '14px',
-        xl2: '22px',
-      },
-      maxWidth: {
-        prose: '46ch',
-        reading: '68ch',
-      },
+      letterSpacing: { eyebrow: '0.22em', tightish: '-0.02em' },
+      borderRadius: { card: '8px', xl2: '20px' },
+      maxWidth: { prose: '46ch', reading: '68ch', def: '720px' },
       boxShadow: {
-        card: '0 1px 2px rgba(14,27,42,0.04), 0 12px 32px -16px rgba(14,27,42,0.14)',
-        lift: '0 20px 60px -24px rgba(14,27,42,0.30)',
-        signal: '0 8px 30px -8px rgba(15,181,166,0.45)',
+        card: '0 1px 2px rgba(30,26,42,0.04), 0 14px 34px -18px rgba(30,26,42,0.16)',
+        lift: '0 22px 60px -26px rgba(30,26,42,0.32)',
+        nav: '0 1px 12px rgba(0,0,0,0.08)',
+        accent: '0 10px 30px -10px rgba(108,42,82,0.45)',
       },
-      transitionTimingFunction: {
-        calm: 'cubic-bezier(0.22, 1, 0.36, 1)',
-      },
+      transitionTimingFunction: { calm: 'cubic-bezier(0.22, 1, 0.36, 1)' },
       keyframes: {
-        sweep: {
-          '0%': { strokeDashoffset: '1' },
-          '100%': { strokeDashoffset: '0' },
-        },
-        'fade-up': {
-          '0%': { opacity: '0', transform: 'translateY(14px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
+        'fade-up': { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
       },
-      animation: {
-        'fade-up': 'fade-up 0.7s cubic-bezier(0.22,1,0.36,1) both',
-      },
+      animation: { 'fade-up': 'fade-up 0.7s cubic-bezier(0.22,1,0.36,1) both' },
     },
   },
   plugins: [],

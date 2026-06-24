@@ -29,9 +29,9 @@ export function Button({ to, href, children, variant = 'primary', className = ''
     'group inline-flex items-center justify-center gap-2 rounded-card px-6 py-3.5 text-sm font-semibold tracking-tight transition-all duration-300 ease-calm focus-visible:outline-2'
   const styles = {
     primary:
-      'bg-ink text-paper hover:bg-ink-soft hover:shadow-signal hover:-translate-y-0.5',
-    signal: 'bg-signal text-white hover:bg-signal-deep hover:shadow-signal hover:-translate-y-0.5',
-    ghost: 'border border-ink/15 text-ink hover:border-signal hover:text-signal',
+      'bg-prune text-craie shadow-accent hover:bg-prune-deep hover:-translate-y-0.5',
+    signal: 'bg-prune text-craie hover:bg-prune-deep hover:shadow-accent hover:-translate-y-0.5',
+    ghost: 'border border-current/25 text-current hover:border-prune hover:text-prune',
   }
   const cls = `${base} ${styles[variant]} ${className}`
   const inner = (

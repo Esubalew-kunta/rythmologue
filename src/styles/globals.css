@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ── "Prune Clinique" custom properties ────────────────────────────── */
+    --color-prune: #6c2a52;
+    --color-prune-deep: #4a1d38;
+    --color-prune-soft: #9a5f82;
+    --color-encre: #1e1a2a;
+    --color-nuit: #14111d;
+    --color-or: #cbb388;
+    --color-or-patine: #a98c5f;
+    --color-ardoise: #2a3140;
+    --color-brume: #6e7585;
+    --color-craie: #f6f2ea;
+    --color-craie-soft: #efe9dd;
+    --color-petrole: #1c5e63;
+
+    /* aliases consumed by shared components */
+    --signal: var(--color-prune);
+    --petrole: var(--color-petrole);
+    --ink: var(--color-ardoise);
+    --paper: var(--color-craie);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    @apply bg-craie text-ardoise font-sans antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection { background: var(--color-prune); color: #fff; }
+
+  /* Display face — Cormorant Garamond. Never below 24px (enforced by usage). */
+  h1, h2, h3 {
+    @apply font-display text-ardoise;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-prune);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+}
+
+@layer components {
+  /* Eyebrow labels use Inter (uppercase, tracked) — JetBrains Mono is reserved
+     for statistics/data moments only (max ~2 per page, per the type spec). */
+  .eyebrow {
+    @apply font-sans text-2xs font-medium uppercase tracking-eyebrow text-or-patine;
+  }
+
+  .container-edge {
+    @apply mx-auto w-full max-w-[1280px] px-5 sm:px-8 lg:px-12;
+  }
+
+  /* skip-to-content link (first focusable element) */
+  .skip-link {
+    @apply sr-only;
+  }
+  .skip-link:focus {
+    @apply not-sr-only fixed left-4 top-4 z-[100] rounded-card bg-prune px-4 py-2 text-sm font-semibold text-craie;
+  }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgba(42, 49, 64, 0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(42, 49, 64, 0.045) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  .link-underline {
+    background-image: linear-gradient(var(--color-prune), var(--color-prune));
+    background-size: 0% 1.5px;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    transition: background-size 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .link-underline:hover { background-size: 100% 1.5px; }
+}

@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
-import Header from './components/layout/Header'
+import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import StickyBookingBar from './components/layout/StickyBookingBar'
 
@@ -25,8 +25,9 @@ export default function App() {
   return (
     <>
       <ScrollToTop />
-      <Header />
-      <main id="contenu">
+      <a href="#contenu" className="skip-link">Aller au contenu</a>
+      <Navbar />
+      <main id="contenu" tabIndex={-1} className="outline-none">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/dr-sana-amraoui" element={<About />} />

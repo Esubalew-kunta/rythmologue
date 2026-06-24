@@ -34,7 +34,7 @@ function buildPath(variant) {
 export default function ECGLine({
   variant = 'calm',
   className = '',
-  stroke = 'var(--signal)',
+  stroke = 'var(--petrole)',
   height = 90,
   loop = false,
 }) {

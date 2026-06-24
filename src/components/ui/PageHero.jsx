@@ -18,15 +18,18 @@ export default function PageHero({ crumbs = [], eyebrow, title, answer, variant 
             </span>
           ))}
         </nav>
-        <Reveal>{eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}</Reveal>
-        <Reveal delay={0.06}>
-          <h1 className="mt-5 max-w-4xl text-4xl font-semibold leading-[1.05] sm:text-5xl">{title}</h1>
-        </Reveal>
-        {answer && (
-          <Reveal delay={0.12}>
-            <p className="mt-6 max-w-reading border-l-2 border-signal pl-5 text-lg text-ink/85">{answer}</p>
+        {/* Full-width section → heading group centred (Change 1) */}
+        <div className="mx-auto max-w-3xl text-center">
+          <Reveal>{eyebrow && <Eyebrow center>{eyebrow}</Eyebrow>}</Reveal>
+          <Reveal delay={0.06}>
+            <h1 className="mx-auto mt-6 text-4xl font-semibold leading-[1.05] sm:text-5xl">{title}</h1>
           </Reveal>
-        )}
+          {answer && (
+            <Reveal delay={0.12}>
+              <p className="mx-auto mt-7 max-w-reading text-lg text-ink/85">{answer}</p>
+            </Reveal>
+          )}
+        </div>
       </Container>
     </section>
   )

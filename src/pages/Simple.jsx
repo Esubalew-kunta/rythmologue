@@ -11,7 +11,7 @@ import PhotoFrame from '../components/ui/PhotoFrame'
  * (montres, cardio check-up, legal) and as a graceful placeholder for
  * pages still to be written (clearly labelled, never a dead end).
  */
-export default function Simple({ path, eyebrow, title, answer, crumbs, blocks = [], variant = 'calm', draft = false, cta = true, photo }) {
+export default function Simple({ path, eyebrow, title, answer, crumbs, blocks = [], variant = 'calm', draft = false, cta = true, photo, photoSrc }) {
   return (
     <>
       <Seo path={path} title={title} description={answer} />
@@ -19,7 +19,7 @@ export default function Simple({ path, eyebrow, title, answer, crumbs, blocks = 
       {photo && (
         <Section className="pt-12">
           <Container>
-            <Reveal><PhotoFrame ratio="16/9" label={photo} /></Reveal>
+            <Reveal><PhotoFrame ratio="16/9" src={photoSrc} alt={photo} label={photo} /></Reveal>
           </Container>
         </Section>
       )}

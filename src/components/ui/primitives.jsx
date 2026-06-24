@@ -13,9 +13,9 @@ export function Section({ id, className = '', children }) {
   )
 }
 
-export function Eyebrow({ children, num }) {
+export function Eyebrow({ children, num, center = false }) {
   return (
-    <p className="eyebrow flex items-center gap-3">
+    <p className={`eyebrow flex items-center gap-3 ${center ? 'justify-center' : ''}`}>
       {num && <span className="text-slate">{num}</span>}
       <span className="h-px w-6 bg-gold/60" aria-hidden />
       {children}

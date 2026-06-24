@@ -14,6 +14,7 @@ import Faq from './pages/Faq'
 import Blog from './pages/Blog'
 import Hub from './pages/Hub'
 import Simple from './pages/Simple'
+import { treatmentVideos } from './data/content'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -88,6 +89,7 @@ export default function App() {
             element={
               <Hub
                 path="/traitements" crumbs={[{ label: 'Traitements' }]}
+                videos={treatmentVideos}
                 eyebrow="Traitements" title="Traiter durablement les arythmies"
                 answer="De l’ablation par cathéter, traitement de référence, aux dispositifs implantables, chaque arythmie appelle une stratégie adaptée."
                 items={[
@@ -119,7 +121,7 @@ export default function App() {
           <Route
             path="/cardio-check-up"
             element={<Simple path="/cardio-check-up" crumbs={[{ label: 'Cardio Check-Up' }]}
-              photo="Centre Cardio Check-Up · espace d’accueil"
+              photo="Centre Cardio Check-Up · espace d’accueil" photoSrc="/cardio-checkup.png"
               eyebrow="Prévention" title="Cardio Check-Up : la prévention cardiovasculaire repensée"
               answer="Fondé et dirigé par le Dr Amraoui, Cardio Check-Up est un centre dédié au bilan cardiovasculaire personnalisé et à la prévention proactive."
               blocks={[
@@ -132,6 +134,7 @@ export default function App() {
           <Route
             path="/montres-connectees-telesuivi"
             element={<Simple path="/montres-connectees-telesuivi" variant="irregular" crumbs={[{ label: 'Montres connectées' }]}
+              photo="Montre connectée affichant un ECG" photoSrc="/montres-ecg.png"
               eyebrow="Cardiologie connectée" title="Montres connectées & télésurveillance"
               answer="Les montres connectées réalisent un ECG à une dérivation et alertent en cas d’irrégularité du rythme. Un outil de dépistage précieux, en complément du suivi médical."
               blocks={[

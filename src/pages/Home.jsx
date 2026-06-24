@@ -89,18 +89,8 @@ export default function Home() {
         <div className="absolute inset-0 bg-grid opacity-60" aria-hidden />
         <div className="absolute -right-40 -top-24 -z-0 h-[520px] w-[520px] rounded-full bg-signal/5 blur-3xl" aria-hidden />
         <Container className="relative grid items-center gap-10 pb-14 pt-28 sm:pt-36 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12 lg:pb-20 lg:pt-44">
-          {/* Photo — first on mobile (full-bleed feel), right on desktop */}
-          <div className="order-1 lg:order-2">
-            <div className="relative">
-              <PhotoFrame ratio="4/5" tone="light" label="Portrait éditorial · Dr Amraoui" className="mx-auto max-w-sm border border-marine/10" />
-              <div className="absolute -bottom-4 -left-3 hidden rounded-card bg-marine px-4 py-2.5 text-craie shadow-lift sm:block">
-                <span className="block font-mono text-[10px] uppercase tracking-eyebrow text-or">London School of Economics</span>
-                <span className="text-sm font-semibold">Health Economics · MBA</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="order-2 lg:order-1">
+          {/* Text — left */}
+          <div>
             <Reveal>
               <p className="eyebrow">Cardiologue · Rythmologue interventionnelle</p>
             </Reveal>
@@ -130,6 +120,19 @@ export default function Home() {
                 </a>
               </div>
             </Reveal>
+          </div>
+
+          {/* Photo — gradient-fade cut-out (background removed), right */}
+          <div className="relative">
+            <div className="relative mx-auto w-full max-w-md lg:max-w-none">
+              <img
+                src="/hero-amraoui-v3.png"
+                alt="Dr Sana Amraoui, cardiologue rythmologue"
+                className="relative z-10 mx-auto w-auto max-h-[420px] object-contain object-bottom sm:max-h-[520px] lg:ml-auto lg:mr-0 lg:max-h-[600px]"
+              />
+              {/* cream fades from the left into the photo */}
+              <div className="pointer-events-none absolute inset-0 z-20 bg-gradient-to-r from-craie from-5% via-craie/0 via-55% to-transparent" aria-hidden />
+            </div>
           </div>
         </Container>
 
@@ -180,8 +183,10 @@ export default function Home() {
       <Section className="py-16 lg:py-20">
         <Container>
           <Reveal>
-            <Eyebrow>Vos symptômes</Eyebrow>
-            <h2 className="mt-4 max-w-2xl text-3xl sm:text-4xl">Mettre un nom sur ce que ressent votre cœur</h2>
+            <div className="mx-auto mb-12 max-w-2xl text-center">
+              <Eyebrow center>Vos symptômes</Eyebrow>
+              <h2 className="mt-5 text-3xl sm:text-4xl">Mettre un nom sur ce que ressent votre cœur</h2>
+            </div>
           </Reveal>
           <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {conditionCards.map((c, i) => (
@@ -207,12 +212,14 @@ export default function Home() {
         <ECGLine variant="resolved" height={120} className="absolute inset-x-0 top-12 opacity-25" stroke="#2E8A8F" loop />
         <Container className="relative">
           <Reveal>
-            <Eyebrow>Mes traitements</Eyebrow>
-            <h2 className="mt-4 max-w-2xl text-3xl text-craie sm:text-4xl">Du diagnostic à la correction du rythme</h2>
-            <p className="mt-4 max-w-reading text-craie/60">
-              Le tracé ci-dessus part d’un rythme normal, traverse la fibrillation, puis retrouve son
-              ordre : l’image même de ce que permet une prise en charge bien menée.
-            </p>
+            <div className="mx-auto max-w-2xl text-center">
+              <Eyebrow center>Mes traitements</Eyebrow>
+              <h2 className="mt-5 text-3xl text-craie sm:text-4xl">Du diagnostic à la correction du rythme</h2>
+              <p className="mx-auto mt-5 max-w-reading text-craie/60">
+                Le tracé ci-dessus part d’un rythme normal, traverse la fibrillation, puis retrouve son
+                ordre : l’image même de ce que permet une prise en charge bien menée.
+              </p>
+            </div>
           </Reveal>
           <div className="mt-12 grid gap-px overflow-hidden rounded-xl2 border border-craie/10 bg-craie/10 md:grid-cols-3">
             {treatmentBlocks.map((b, i) => (
@@ -233,7 +240,7 @@ export default function Home() {
       <Section className="py-20 lg:py-28">
         <Container className="grid items-center gap-12 lg:grid-cols-2">
           <Reveal>
-            <PhotoFrame ratio="3/4" label="Salle d’électrophysiologie · Hôpital Américain de Paris" />
+            <PhotoFrame ratio="3/4" src="/consultation.jpeg" alt="Dr Amraoui en consultation" label="Salle d’électrophysiologie · Hôpital Américain de Paris" />
           </Reveal>
           <Reveal delay={0.1}>
             <div>
@@ -273,12 +280,10 @@ export default function Home() {
       <Section className="py-16 lg:py-20">
         <Container>
           <Reveal>
-            <div className="flex flex-wrap items-end justify-between gap-4">
-              <div>
-                <Eyebrow>Comprendre & suivre</Eyebrow>
-                <h2 className="mt-4 text-3xl sm:text-4xl">Guides & actualités</h2>
-              </div>
-              <Link to="/blog" className="link-underline text-sm font-semibold text-ardoise">Tout le blog →</Link>
+            <div className="mx-auto max-w-2xl text-center">
+              <Eyebrow center>Comprendre & suivre</Eyebrow>
+              <h2 className="mt-5 text-3xl sm:text-4xl">Guides & actualités</h2>
+              <Link to="/blog" className="link-underline mt-5 inline-block text-sm font-semibold text-ardoise">Tout le blog →</Link>
             </div>
           </Reveal>
           <div className="scroll-strip mt-10 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-2 md:grid md:grid-cols-3 md:overflow-visible">
@@ -326,8 +331,10 @@ export default function Home() {
       <Section className="py-16 lg:py-20">
         <Container>
           <Reveal>
-            <Eyebrow>Reconnaissance</Eyebrow>
-            <h2 className="mt-4 max-w-2xl text-3xl sm:text-4xl">Une expertise reconnue, en France et à l’international</h2>
+            <div className="mx-auto mb-12 max-w-2xl text-center">
+              <Eyebrow center>Reconnaissance</Eyebrow>
+              <h2 className="mt-5 text-3xl sm:text-4xl">Une expertise reconnue, en France et à l’international</h2>
+            </div>
           </Reveal>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {authority.map((m, i) => {

@@ -34,7 +34,7 @@ export default function AnimatedStat({ value, label, alert = false }) {
   return (
     <div ref={ref} className="relative">
       <span
-        className={`block font-mono text-4xl font-medium tabular-nums tracking-tight sm:text-5xl ${
+        className={`block font-mono text-3xl font-medium tabular-nums tracking-tight sm:text-4xl lg:text-5xl ${
           alert ? 'text-alert' : 'text-signal'
         }`}
       >

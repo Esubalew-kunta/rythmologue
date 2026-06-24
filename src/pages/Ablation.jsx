@@ -64,7 +64,7 @@ export default function Ablation() {
       <Section className="pb-4">
         <Container>
           <Reveal>
-            <PhotoFrame ratio="16/9" label="Cartographie 3D en salle d’électrophysiologie · illustration de procédure" />
+            <PhotoFrame ratio="16/9" src="/ablation-eplab.png" alt="Salle d’électrophysiologie avec cartographie 3D du cœur" label="Cartographie 3D en salle d’électrophysiologie · illustration de procédure" />
           </Reveal>
         </Container>
       </Section>
@@ -72,8 +72,10 @@ export default function Ablation() {
       <Section className="py-16">
         <Container>
           <Reveal>
-            <Eyebrow>Les 3 énergies</Eyebrow>
-            <h2 className="mt-5 max-w-2xl text-3xl font-semibold">Chaleur, froid ou champ électrique</h2>
+            <div className="mx-auto mb-10 max-w-2xl text-center">
+              <Eyebrow center>Les 3 énergies</Eyebrow>
+              <h2 className="mt-5 text-3xl font-semibold">Chaleur, froid ou champ électrique</h2>
+            </div>
           </Reveal>
           <div className="mt-10 grid gap-4 md:grid-cols-3">
             {energies.map((e, i) => (

@@ -5,6 +5,7 @@ import { Container, Section, Eyebrow, Reveal } from '../components/ui/primitives
 import AnimatedStat from '../components/ui/AnimatedStat'
 import InlineCTA from '../components/ui/InlineCTA'
 import PulseMarker from '../components/brand/PulseMarker'
+import PhotoFrame from '../components/ui/PhotoFrame'
 
 const types = [
   { name: 'Apnée obstructive', tag: '95 % des cas', desc: 'Blocage mécanique des voies respiratoires : relâchement des tissus, surpoids, anatomie.' },
@@ -30,6 +31,14 @@ export default function ApneeSommeil() {
         title="L’apnée du sommeil et votre cœur : comprendre pour mieux traiter"
         answer="Le syndrome d’apnées-hypopnées obstructives du sommeil (SAHOS) interrompt la respiration de façon répétée pendant la nuit. À chaque pause, le cœur subit un stress intense, ce qui en fait une cause fréquente de fibrillation atriale."
       />
+
+      <Section className="pt-12">
+        <Container>
+          <Reveal>
+            <PhotoFrame ratio="16/9" src="/apnee-sommeil.png" alt="Enregistrement du sommeil à domicile (polygraphie)" label="Dépistage du sommeil · polygraphie" />
+          </Reveal>
+        </Container>
+      </Section>
 
       <Section className="py-16">
         <Container className="grid gap-10 sm:grid-cols-3">
@@ -60,7 +69,7 @@ export default function ApneeSommeil() {
 
       <Section className="py-12">
         <Container>
-          <Reveal><Eyebrow>Les 3 types</Eyebrow></Reveal>
+          <Reveal><div className="mb-8 text-center"><Eyebrow center>Les 3 types</Eyebrow></div></Reveal>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {types.map((t, i) => (
               <Reveal key={t.name} delay={i * 0.08}>

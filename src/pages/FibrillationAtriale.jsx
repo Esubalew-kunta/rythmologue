@@ -53,9 +53,14 @@ export default function FibrillationAtriale() {
       {/* Stats */}
       <Section className="py-16">
         <Container>
-          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+          {/* 2×2 on mobile, single row on desktop — each stat in its own card */}
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
             {stats.map((s, i) => (
-              <Reveal key={s.label} delay={i * 0.08}><AnimatedStat {...s} /></Reveal>
+              <Reveal key={s.label} delay={i * 0.08}>
+                <div className="h-full rounded-xl2 border border-marine/8 bg-craie-pure p-5 shadow-card sm:p-6">
+                  <AnimatedStat {...s} />
+                </div>
+              </Reveal>
             ))}
           </div>
         </Container>
@@ -94,7 +99,7 @@ export default function FibrillationAtriale() {
       {/* 3 forms */}
       <Section className="py-16">
         <Container>
-          <Reveal><Eyebrow>Les 3 formes</Eyebrow></Reveal>
+          <Reveal><div className="mb-10 text-center"><Eyebrow center>Les 3 formes</Eyebrow></div></Reveal>
           <div className="mt-10 grid gap-4 md:grid-cols-3">
             {forms.map((f, i) => (
               <Reveal key={f.name} delay={i * 0.08}>
@@ -112,8 +117,10 @@ export default function FibrillationAtriale() {
       <Section className="py-16">
         <Container>
           <Reveal>
-            <Eyebrow>Options thérapeutiques</Eyebrow>
-            <h2 className="mt-5 max-w-2xl text-3xl font-semibold">Du médicament à la guérison</h2>
+            <div className="mx-auto mb-10 max-w-2xl text-center">
+              <Eyebrow center>Options thérapeutiques</Eyebrow>
+              <h2 className="mt-5 text-3xl font-semibold">Du médicament à la guérison</h2>
+            </div>
           </Reveal>
           <div className="mt-10 space-y-4">
             {treatments.map((t, i) => (

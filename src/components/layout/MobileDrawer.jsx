@@ -70,13 +70,15 @@ export default function MobileDrawer({ open, onClose, nav }) {
                   <span className="text-or" aria-hidden>→</span>
                 </Link>
                 {item.children && (
-                  <div className="mb-3 ml-1 flex flex-wrap gap-x-4 gap-y-1">
+                  <ul className="mb-3 ml-3 space-y-0.5 border-l border-craie/15 pl-4">
                     {item.children.map((c) => (
-                      <Link key={c.href} to={c.href} className="py-1 font-sans text-sm text-craie/55">
-                        {c.label}
-                      </Link>
+                      <li key={c.href}>
+                        <Link to={c.href} className="block py-1.5 font-sans text-sm text-craie/60">
+                          {c.label}
+                        </Link>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 )}
               </motion.div>
             ))}

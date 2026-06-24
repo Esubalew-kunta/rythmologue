@@ -5,3 +5,8 @@ dist-ssr
 .DS_Store
 .vite
 npm-debug.log*
+
+# Loose source images in project root (originals live here; used copies are in /public)
+/Gemini_Generated_Image_*.png
+/WhatsApp_Image_*.png
+/hero design.png

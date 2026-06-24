@@ -41,7 +41,7 @@ export default function About() {
         <Container className="grid gap-12 lg:grid-cols-[1fr_1.4fr]">
           <Reveal>
             <PhotoFrame className="lg:sticky lg:top-28" ratio="4/5"
-              label="Portrait éditorial · Dr Amraoui" />
+              src="/dr_photo_2.jpeg" alt="Dr Sana Amraoui" label="Portrait éditorial · Dr Amraoui" />
           </Reveal>
           <Reveal delay={0.1}>
             <div className="space-y-5 text-slate">

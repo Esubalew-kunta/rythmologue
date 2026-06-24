@@ -81,6 +81,39 @@ export const faPagFaq = [
 ]
 
 // Seeded from the live blog (Actualités) + planned cornerstone Guides.
+// Educational videos in the Treatments area (Change 5).
+// URLs intentionally empty until the real YouTube links are supplied.
+export const treatmentVideos = [
+  {
+    title: 'Comprendre l’ablation par cathéter',
+    desc: 'En quoi consiste l’intervention, comment elle se déroule, et ce qu’elle permet.',
+    audience: 'Patients',
+    duration: '2–4 min',
+    url: 'https://www.youtube.com/watch?v=VKK9bjPB', // ⚠ ID looks truncated (8 chars, expected 11) — shows placeholder until corrected
+  },
+  {
+    title: 'L’électroporation, une énergie de nouvelle génération',
+    desc: 'Le principe des champs électriques pulsés et pourquoi ils ménagent les tissus voisins.',
+    audience: 'Patients & confrères',
+    duration: '3–5 min',
+    url: 'https://www.youtube.com/watch?v=BjDfsH-kozo',
+  },
+  {
+    title: 'Vivre avec un pacemaker ou un défibrillateur',
+    desc: 'Le quotidien après la pose d’un dispositif implantable, en pratique.',
+    audience: 'Patients',
+    duration: '2–4 min',
+    url: 'https://www.youtube.com/watch?v=tzG7RqOk1IU',
+  },
+  {
+    title: 'Montres connectées : bien suivre son rythme',
+    desc: 'Ce que l’ECG d’une montre détecte vraiment, et comment l’utiliser utilement.',
+    audience: 'Patients',
+    duration: '2–3 min',
+    url: 'https://www.youtube.com/watch?v=fw8CV0Hq2Lo',
+  },
+]
+
 // The blog's five fixed categories (Change 4c).
 export const blogCategories = [
   { key: 'fibrillation', label: 'Fibrillation & Arythmies' },

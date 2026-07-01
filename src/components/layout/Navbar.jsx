@@ -22,10 +22,9 @@ export const primaryNav = [
       { label: 'Ablation par cathéter', href: '/traitements/ablation-catheter' },
       { label: 'Pacemaker', href: '/traitements/pacemaker' },
       { label: 'Défibrillateur', href: '/traitements/defibrillateur' },
-      { label: 'Montres & télésurveillance', href: '/montres-connectees-telesuivi' },
     ],
   },
-  { label: 'Apnée du sommeil', href: '/apnee-du-sommeil' },
+  { label: 'Montres connectées', href: '/montres-connectees-telesuivi' },
   { label: 'Blog', href: '/blog' },
   { label: 'À propos', href: '/dr-sana-amraoui' },
 ]

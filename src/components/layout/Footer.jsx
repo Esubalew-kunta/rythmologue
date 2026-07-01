@@ -63,6 +63,29 @@ export default function Footer() {
         </div>
       </div>
 
+      {/* Google review QR — clickable, scannable */}
+      <div className="border-t border-paper/10">
+        <div className="container-edge flex flex-col items-center gap-4 py-8 text-center sm:flex-row sm:justify-between sm:text-left">
+          <div>
+            <p className="font-mono text-2xs uppercase tracking-eyebrow text-gold-soft">Votre avis compte</p>
+            <p className="mt-1.5 text-sm text-paper/70">Scannez le QR code pour laisser un avis Google.</p>
+          </div>
+          <a
+            href="https://g.page/r/CduP-ZEHa8huEAE/review"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Laisser un avis Google"
+            className="shrink-0 transition-transform hover:-translate-y-0.5"
+          >
+            <img
+              src="/Dr_Amraoui_Review_QR-4_navy.png"
+              alt="QR code — laisser un avis Google au Dr Amraoui"
+              className="h-28 w-28 rounded-lg"
+            />
+          </a>
+        </div>
+      </div>
+
       <div className="border-t border-paper/10">
         <div className="container-edge flex flex-col gap-2 py-5 text-xs text-paper/45 sm:flex-row sm:items-center sm:justify-between">
           <p>© {2026} Dr Sana Amraoui · {site.sector}</p>

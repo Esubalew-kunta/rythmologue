@@ -63,7 +63,6 @@ export const nav = [
       { label: 'Défibrillateur (DAI)', href: '/traitements/defibrillateur' },
     ],
   },
-  { label: 'Apnée du sommeil', href: '/apnee-du-sommeil' },
   { label: 'Cardio Check-Up', href: '/cardio-check-up' },
   { label: 'Montres connectées', href: '/montres-connectees-telesuivi' },
   { label: 'Blog', href: '/blog' },

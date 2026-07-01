@@ -3,15 +3,16 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import StickyBookingBar from './components/layout/StickyBookingBar'
+import FloatingCall from './components/layout/FloatingCall'
 
 import Home from './pages/Home'
 import About from './pages/About'
 import FibrillationAtriale from './pages/FibrillationAtriale'
 import Ablation from './pages/Ablation'
-import ApneeSommeil from './pages/ApneeSommeil'
 import Contact from './pages/Contact'
 import Faq from './pages/Faq'
 import Blog from './pages/Blog'
+import Article from './pages/Article'
 import Hub from './pages/Hub'
 import Simple from './pages/Simple'
 import { treatmentVideos } from './data/content'
@@ -116,8 +117,6 @@ export default function App() {
               blocks={[{ p: 'Contenu détaillé en cours de rédaction.' }]} />}
           />
 
-          <Route path="/apnee-du-sommeil" element={<ApneeSommeil />} />
-
           <Route
             path="/cardio-check-up"
             element={<Simple path="/cardio-check-up" crumbs={[{ label: 'Cardio Check-Up' }]}
@@ -136,23 +135,17 @@ export default function App() {
             element={<Simple path="/montres-connectees-telesuivi" variant="irregular" crumbs={[{ label: 'Montres connectées' }]}
               photo="Montre connectée affichant un ECG" photoSrc="/montres-ecg.png"
               eyebrow="Cardiologie connectée" title="Montres connectées & télésurveillance"
-              answer="Les montres connectées réalisent un ECG à une dérivation et alertent en cas d’irrégularité du rythme. Un outil de dépistage précieux, en complément du suivi médical."
+              answer="Portée au poignet, une montre connectée peut quadrupler la détection de la fibrillation atriale (9,6 % contre 2,3 %), et 57 % des épisodes ainsi détectés sont totalement silencieux. C’est un outil de dépistage précieux — toute alerte devant toujours être confirmée par un avis médical."
               blocks={[
-                { h: 'En pratique', p: 'Chez les patients asymptomatiques, les capteurs d’irrégularité alertent et permettent un ECG précoce, ce qui réduit le risque d’AVC et d’insuffisance cardiaque. Chez les patients symptomatiques, la montre documente l’épisode de palpitation par un ECG.' },
-                { h: 'Cas clinique', p: 'Une tachycardie supraventriculaire à 190 bpm a été diagnostiquée grâce à l’ECG d’une montre connectée, puis traitée par une intervention curative.' },
+                { h: 'Comment ça marche', p: 'Ces montres et bracelets s’appuient sur des capteurs de photopléthysmographie, et parfois sur un ECG à une dérivation. Ils repèrent une irrégularité du rythme au quotidien et permettent d’enregistrer un tracé au moment même des symptômes.' },
+                { h: 'Un dépistage précoce', p: 'Chez les patients à risque, ces objets détectent tôt une fibrillation atriale restée silencieuse, ce qui ouvre la voie à une prise en charge précoce et à la prévention de l’AVC et de l’insuffisance cardiaque. Toute alerte doit néanmoins être confirmée par un professionnel.' },
                 { h: 'Télésurveillance des prothèses', p: 'Pacemakers et défibrillateurs peuvent être suivis à distance, pour détecter au plus tôt toute anomalie sans multiplier les déplacements.' },
               ]} />}
           />
 
           <Route path="/faq" element={<Faq />} />
           <Route path="/blog" element={<Blog />} />
-          <Route
-            path="/blog/:slug"
-            element={<Simple path="/blog" draft crumbs={[{ label: 'Blog', href: '/blog' }, { label: 'Article' }]}
-              eyebrow="Blog" title="Article"
-              answer="Le contenu complet de cet article sera publié prochainement."
-              blocks={[{ p: 'Cet espace accueillera l’article (gabarit GEO : réponse courte, sous-titres en questions, encadré statistique, bloc FAQ, signature de l’auteure).' }]} cta={false} />}
-          />
+          <Route path="/blog/:slug" element={<Article />} />
 
           <Route
             path="/mentions-legales"
@@ -179,6 +172,7 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
+      <FloatingCall />
       <StickyBookingBar />
     </>
   )

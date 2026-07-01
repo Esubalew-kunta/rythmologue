@@ -14,7 +14,7 @@ export default function Blog() {
   return (
     <>
       <Seo path="/blog" title="Blog : guides et actualités en rythmologie"
-        description="Guides patients et actualités du Dr Sana Amraoui : fibrillation atriale, traitements, examens, apnée du sommeil et actualités de la rythmologie." />
+        description="Guides patients et actualités du Dr Sana Amraoui : fibrillation atriale, traitements, examens, montres connectées et actualités de la rythmologie." />
 
       <PageHero
         crumbs={[{ label: 'Blog' }]}

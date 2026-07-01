@@ -41,7 +41,7 @@ function HeroHeadline() {
 }
 
 const heroStats = [
-  '45M de patients atteints de FA dans le monde',
+  '750 000+ personnes atteintes de FA en France',
   'Ablation par électroporation disponible',
   'Hôpital Américain de Paris · Centre d’expertise',
 ]
@@ -57,7 +57,7 @@ const institutions = [
 const conditionCards = [
   { slug: 'fibrillation-atriale', name: 'Fibrillation atriale', stat: 'L’arythmie la plus fréquente, et l’une des mieux traitées aujourd’hui.' },
   { slug: 'types-tachycardie', name: 'Tachycardie & bradycardie', stat: 'Un rythme trop rapide ou trop lent : identifiable, et traitable.' },
-  { slug: '../apnee-du-sommeil', name: 'Apnée du sommeil', stat: 'Souvent liée au cœur : un dépistage simple permet de bien la prendre en charge.' },
+  { slug: 'holter-implantable', name: 'Malaises & syncopes', stat: 'Le Holter implantable détecte ce que les examens courts ne voient pas.' },
 ]
 
 const treatmentBlocks = [
@@ -80,7 +80,7 @@ export default function Home() {
     <>
       <Seo
         path="/"
-        description="Le Dr Sana Amraoui, cardiologue rythmologue et cheffe d'unité à l'Hôpital Américain de Paris, traite la fibrillation atriale, l'apnée du sommeil et pratique l'ablation par cathéter, dont l'électroporation."
+        description="Le Dr Sana Amraoui, cardiologue rythmologue et cheffe d'unité à l'Hôpital Américain de Paris, traite la fibrillation atriale, assure le suivi par montres connectées et pratique l'ablation par cathéter, dont l'électroporation."
         schema={physicianSchema}
       />
 

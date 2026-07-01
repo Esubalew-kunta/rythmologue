@@ -149,7 +149,6 @@ export default function FibrillationAtriale() {
         <Container>
           <p className="text-sm text-slate">
             À lire aussi :{' '}
-            <Link to="/apnee-du-sommeil" className="link-underline font-semibold text-ink">Apnée du sommeil & cœur</Link>{' · '}
             <Link to="/traitements/ablation-catheter" className="link-underline font-semibold text-ink">Ablation par cathéter</Link>{' · '}
             <Link to="/montres-connectees-telesuivi" className="link-underline font-semibold text-ink">Montres connectées</Link>
           </p>
